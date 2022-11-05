@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 $superheroes = [
   [
       "id" => 1,
@@ -65,8 +68,42 @@ $superheroes = [
 
 ?>
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+<?php
+
+if($_SERVER['REQUEST_METHOD'] === 'GET'){
+    $name = $_GET["query"];
+    $name = strip_tags($name);
+    $name = strtolower($name);
+    $found = false;
+    $list = '';
+
+    echo "<h1>RESULT</h1>";
+
+    if($name == ""){
+        echo "<ul>";
+        foreach ($superheroes as $superhero):
+            echo "<h3>".strtoupper($superhero['alias'])."</h3>";
+         endforeach;
+        echo "</ul>";
+        return;
+    }
+  
+
+    foreach ($superheroes as $superhero):
+        if($name == strtolower($superhero['name']) or $name == strtolower($superhero['alias'])){
+            echo "<h3>".strtoupper($superhero['alias'])."</h3>";
+            echo "<h4> A.K.A ".strtoupper($superhero['name'])."</h4>";
+            echo "<p>".$superhero['biography']."</p>";
+            $found = true;
+        }
+     endforeach;
+    
+     if($found == false){
+        echo "<h3>Superhero not found</h3>";
+     }
+
+     
+}
+
+?>
+
