@@ -1,0 +1,58 @@
+body{
+    background-color: gainsboro;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: red;
+    color: white;
+    width: 10%;
+}
+
+input{
+    padding: 20px;
+    width: 40%;
+    font-size: 16px;
+}
+
+#search-area{
+    background-color: cornflowerblue;
+    padding: 20px;
+}
+#result{
+    width: 70%;
+    margin: auto;
+}
+
+.red{
+    color: red;
+}
+
+#result h1{
+    color: black;
+}
+
+#result h3{
+    font-size: 30px;
+}
+
+#result h4{
+    font-size: 25px;
+}
+
+#result p{
+    font-size: 20px;
+}
+
+#result ul{
+    font-size: 20px;
+}

@@ -77,12 +77,12 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $found = false;
     $list = '';
 
-    echo "<h1>RESULT</h1>";
+    echo "<h1>RESULT</h1><hr></hr>";
 
     if($name == ""){
         echo "<ul>";
         foreach ($superheroes as $superhero):
-            echo "<h3>".strtoupper($superhero['alias'])."</h3>";
+            echo "<li>".strtoupper($superhero['alias'])."</li>";
          endforeach;
         echo "</ul>";
         return;
@@ -99,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
      endforeach;
     
      if($found == false){
-        echo "<h3>Superhero not found</h3>";
+        echo "<h3 class='red'>Superhero not found</h3>";
      }
 
      
